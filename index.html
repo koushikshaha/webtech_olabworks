@@ -26,16 +26,84 @@
     <img src="/images/html.png" height="70px" class="img" />
     <h1 style="text-align: center">Title</h1>
     <div class="table">
-      <div style="background-color: white; height: 200px; width: 700px"></div>
-      <div style="background-color: white; height: 200px; width: 100px">
+      <div style="background-color: white; height: 600px; width: 1000px">
         <div
-          style="background-color: blue; height: 130px; width: 100px"
+          style="background-color: lightblue; height: 500px; width: 800px"
           class="bluee"
-        ></div>
-        <div style="background-color: red; height: 70px; width: 100px"></div>
+        >
+          <form action="get">
+            <div>
+              <label for="name">Name</label>
+              <input type="text" id="name" placeholder="Enter your name" />
+            </div>
+            <div>
+              <label for="gender">Gender</label>
+              <input type="radio" name="malegender" />
+              <label for="male">Male</label>
+              <input type="radio" name="femalegender" />
+              <label for="female">Female </label>
+            </div>
+            <div>
+              <label for="password"> Password</label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Enter your password"
+              /><br />
+            </div>
+            <div>
+              <label for="repassword"> Confirm Password</label>
+              <input
+                type="password"
+                name="repassword"
+                id="repassword"
+                placeholder="Enter your password"
+              />
+            </div>
+
+            <div>
+              <label for="Email">Email</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="enter your email"
+              />
+            </div>
+            <div>
+              <label for="DOB">Date of birth</label>
+              <input
+                type="date"
+                name="DOB"
+                id="DOB"
+                placeholder="Enter your DOB"
+              />
+            </div>
+            <div>
+              <a
+                href="https://www.accuweather.com/en/weather-news/accuweather-com-terms-and-conditions/153461"
+              >
+                Tems and conditions</a
+              ><br />
+              <input type="radio" name="positive" id="positive" />
+              <label for="positive"
+                >I have read and accepted the terms and conditions </label
+              ><br />
+              <input type="radio" name="negative" id="negative" checked />
+              <label for="negative"
+                >I have read and rejected the terms and conditions</label
+              >
+            </div>
+            <div>
+              <button type="submit">submit</button>
+            </div>
+          </form>
+        </div>
+        <div style="background-color: red; height: 100px; width: 800px"></div>
       </div>
       <div
-        style="background-color: blueviolet; height: 200px; width: 90px"
+        style="background-color: blueviolet; height: 600px; width: 900px"
       ></div>
     </div>
   </body>
