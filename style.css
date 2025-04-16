@@ -1,0 +1,37 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+}
+
+.box {
+  display: flex;
+  height: 750px;
+  width: 650px;
+  background-color: black;
+}
+
+.left-stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.orange {
+  width: 325px;
+  height: 600px;
+  background-color: orange;
+}
+
+.gray {
+  width: 325px;
+  height: 150px;
+  background-color: gray;
+}
+
+.blue {
+  width: 325px;
+  height: 750px;
+  background-color: deepskyblue;
+}
