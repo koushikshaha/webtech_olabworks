@@ -35,3 +35,52 @@ body {
   height: 750px;
   background-color: deepskyblue;
 }
+
+.login,
+.registration {
+  border-radius: 5px;
+  margin: 10px;
+  height: 20px;
+  border: 0px;
+}
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  width: 150px; /* Same width for all labels */
+  margin-right: 10px;
+  text-align: right;
+  flex-direction: column;
+}
+.button_container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.button {
+  background-color: aquamarine;
+  border: 0;
+  border-radius: 10px;
+  height: 35px;
+  width: 65px;
+  margin: 10px;
+}
+.table_container {
+  display: flex;
+  justify-content: center;
+}
+
+.table_class {
+  margin: 10px;
+}
+table,
+th,
+td {
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+td,
+th {
+  width: 100px;
+  height: 38px;
+}
