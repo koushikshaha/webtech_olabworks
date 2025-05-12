@@ -17,7 +17,7 @@
     <div class="box">
       <div class="left-stack">
         <div class="orange">
-          <form onsubmit="return validate()">
+          <form onsubmit="return validate()" action = "index.php" method ="post">
             <div>
               <p id="messagebox"></p>
               <p id="error message"></p>
@@ -28,6 +28,7 @@
               <input
                 type="text"
                 id="name"
+                name ="fullname"
                 class="registration"
                 placeholder="Enter your name"
               />
@@ -38,6 +39,7 @@
               <input
                 type="password"
                 id="password"
+                name = "password"
                 class="registration"
                 placeholder="Enter your password"
               />
