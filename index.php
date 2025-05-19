@@ -8,7 +8,7 @@
 </head>
 <body>
        <h1>PHP INPUT</h1>
-       <form action="external.php" method="post">
+       <form action="external.php" method="get">
         <div>
         <input type="text" name="fullname" placeholder="Name">
         </div>
@@ -29,14 +29,8 @@
         <input type="submit" name="submit" value="submit"> 
         </div>
 
-        
-        
-        
-
-        
-
-
-
        </form>   
 </body>
 </html>
+
+
