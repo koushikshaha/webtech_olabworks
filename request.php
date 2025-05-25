@@ -1,43 +1,34 @@
-<!-- request.php -->
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Select Cities</title>
+  <title>City Selection</title>
+  <link rel="stylesheet" href="css/request.css">
 </head>
-<body>
-    <h2>Select 10 Cities</h2>
+<body background-color: <?= htmlspecialchars($bg_color) ?>>
 
-    <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if (!isset($_POST['cities']) || count($_POST['cities']) !== 10) {
-            echo "<p style='color:red;'>Please select exactly 10 cities.</p>";
-        } else {
-            // Redirect to showaqi.php with selected cities via session
-            session_start();
-            $_SESSION['selected_cities'] = $_POST['cities'];
-            header("Location: showaqi.php");
-            exit();
-        }
-    }
+  <header>
+    <div><?= htmlspecialchars($username) ?></div>
+    <a href="logout.php"><button class = "button" >Logout</button></a>
+  </header>
 
-    $cities = [
-    "Tokyo", "Beijing", "Seoul", "Bangkok", "Mumbai",
-    "Delhi", "Jakarta", "Manila", "Kuala Lumpur", "Hanoi",
-    "Singapore", "Dhaka", "Karachi", "Tehran", "Baghdad",
-    "Riyadh", "Doha", "Istanbul", "Kolkata", "Shanghai"
-];
-
-    ?>
-
-    <form method="post">
-        <?php foreach ($cities as $city): ?>
-            <label>
-                <input type="checkbox" name="cities[]" value="<?= htmlspecialchars($city) ?>">
-                <?= htmlspecialchars($city) ?>
-            </label><br>
-        <?php endforeach; ?>
-        <br>
-        <input type="submit" value="Submit">
+  <div class="container">
+    <h2>Select Your Cities</h2>
+    <form method="POST">
+      <div class="city-list">
+        <?php
+          $cities = ["New York", "Los Angeles", "Chicago", "Houston", "Phoenix",
+                     "Philadelphia", "San Antonio", "San Diego", "Dallas", "San Jose",
+                     "Austin", "Jacksonville", "Fort Worth", "Columbus", "Charlotte",
+                     "San Francisco", "Indianapolis", "Seattle", "Denver", "Washington"];
+          foreach ($cities as $city) {
+              echo "<label><input type='checkbox' name='cities[]' value='$city' /> $city</label>";
+          }
+        ?>
+      </div>
+      <button type="submit" class="submit-btn">Submit</button>
     </form>
+  </div>
+
 </body>
 </html>

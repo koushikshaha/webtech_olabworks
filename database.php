@@ -2,7 +2,7 @@
 $db_server = "localhost";
 $db_user = "root";
 $db_pass = "";
-$db_name = "aqi_db";
+$db_name = "project_aqi_db";
 $conn = "";
 
 try {
