@@ -1,8 +1,8 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['submit'])) {
-        header("Location: confirm_reg.php");
-    exit;
+    if (isset($_POST['submit_registration'])) {
+        header("Location: confirm1.php");
+        exit;
     }
 }
 ?>
@@ -26,33 +26,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="box">
       <div class="left-stack">
         <div class="orange">
-          <form onsubmit="return validate()" action = "confirm_reg.php" method ="post">
+          <form onsubmit="return validate()" action="confirm1.php" method="post">
             <div>
-              <p id="messagebox"></p>
-              <p id="error message"></p>
-              <p></p>
+              <p id="messageBox"></p>
+              <p id="errorMessage"></p>
             </div>
             <div>
               <label for="name">Name</label>
-              </div>
-              <div>
+            </div>
+            <div>
               <input
                 type="text"
                 id="name"
-                name ="name"
+                name="name"
                 class="registration"
                 placeholder="Enter your name"
               />
             </div>
 
-            <div >
+            <div>
               <label for="password">Password</label>
             </div>
             <div>
               <input
                 type="password"
                 id="password"
-                name = "password"
+                name="password"
                 class="registration"
                 placeholder="Enter your password"
               />
@@ -65,6 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               <input
                 type="password"
                 id="repassword"
+                name="repassword"
                 class="registration"
                 placeholder="Re-enter your password"
               />
@@ -79,12 +79,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <div>
               <label for="email">Email</label>
-              </div>
-              <div>
+            </div>
+            <div>
               <input
                 type="email"
                 id="email"
-                name = "email";
+                name="email"
                 class="registration"
                 placeholder="Enter your email"
               />
@@ -94,7 +94,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               <label for="DOB">Date of Birth</label>
             </div>
             <div>
-              <input type="date" name ="date" class="registration" id="DOB" />
+              <input type="date" name="date" class="registration" id="DOB" />
             </div>
 
             <div>
@@ -122,8 +122,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 Terms and Conditions</a
               ><br />
               <input type="radio" name="terms" id="positive" value="accepted" />
-              <label for="positive">I accept the terms and conditions</label
-              ><br />
+              <label for="positive">I accept the terms and conditions</label>
+              <br />
               <input
                 type="radio"
                 name="terms"
@@ -132,38 +132,40 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 checked
               />
               <label for="negative"
-                >I donot accept the terms and conditions</label
+                >I do not accept the terms and conditions</label
               >
             </div>
 
             <div class="button_container">
-              <button type="submit" class="button">Sign in</button>
+              <button type="submit" class="button" name="submit_registration">Sign in</button>
             </div>
             <script src="validate.js"></script>
           </form>
         </div>
         <div class="gray">
-          <form>
+          <form action="process.php" method="post">
             <div class="formgroup">
-              <label for="username">Username</label>
+              <label for="email">Email</label>
               <input
                 type="text"
                 id="username"
+                name="email"
                 class="login"
-                placeholder="Enter your username"
+                placeholder="Enter your email"
               />
             </div>
             <div class="formgroup">
-              <label for="password"> Password</label>
+              <label for="login_password"> Password</label>
               <input
-                type="text"
-                id="password"
+                type="password"
+                id="login_password"
+                name="password"
                 class="login"
                 placeholder="Enter your password"
               />
             </div>
             <div class="button_container">
-              <button type="submit" class="button" action = "process.php">log in</button>
+              <button type="submit" class="button" name="submit_login">log in</button>
             </div>
           </form>
         </div>
@@ -179,28 +181,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               <th>AQI</th>
             </tr>
             <tr>
-              <td></td>
-              <td></td>
+              <td>Dhaka</td>
+              <td>150</td>
             </tr>
             <tr>
-              <td></td>
-              <td></td>
+              <td>Chittagong</td>
+              <td>120</td>
             </tr>
             <tr>
-              <td></td>
-              <td></td>
+              <td>Rajshahi</td>
+              <td>90</td>
             </tr>
             <tr>
-              <td></td>
-              <td></td>
+              <td>Sylhet</td>
+              <td>80</td>
             </tr>
             <tr>
-              <td></td>
-              <td></td>
+              <td>Khulna</td>
+              <td>110</td>
             </tr>
             <tr>
-              <td></td>
-              <td></td>
+              <td>Mymensingh</td>
+              <td>75</td>
             </tr>
           </table>
         </div>
