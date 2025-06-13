@@ -1,6 +1,6 @@
 <?php
 session_start();
-$username = $_SESSION['username'] ?? 'Guest';
+$username = $_SESSION['uname'] ?? 'Guest';
 $bg_color = $_COOKIE['bg_color'] ?? '#ffffff';
 
 $message = '';

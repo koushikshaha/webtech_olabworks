@@ -1,12 +1,6 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['submit_registration'])) {
-        header("Location: confirm1.php");
-        exit;
-    }
-}
+session_start();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -114,50 +108,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               <input type="color" name="color" id="color">
             </div>
 
-            <div>
-              <a
-                href="https://www.accuweather.com/en/weather-news/accuweather-com-terms-and-conditions/153461"
-                target="_blank"
-              >
-                Terms and Conditions</a
-              ><br />
-              <input type="radio" name="terms" id="positive" value="accepted" />
-              <label for="positive">I accept the terms and conditions</label>
-              <br />
-              <input
-                type="radio"
-                name="terms"
-                id="negative"
-                value="not_accepted"
-                checked
-              />
-              <label for="negative"
-                >I do not accept the terms and conditions</label
-              >
-            </div>
-
             <div class="button_container">
               <button type="submit" class="button" name="submit_registration">Sign in</button>
             </div>
             <script src="validate.js"></script>
           </form>
         </div>
+
         <div class="gray">
-          <form action="process.php" method="post">
+          <form  action="login.php" method="post">
             <div class="formgroup">
               <label for="email">Email</label>
               <input
                 type="text"
-                id="username"
+                id="login_email"
                 name="email"
                 class="login"
                 placeholder="Enter your email"
               />
             </div>
             <div class="formgroup">
-              <label for="login_password"> Password</label>
+              <label for="login_password">Password</label>
               <input
-                type="password"
+                type="login_password"
                 id="login_password"
                 name="password"
                 class="login"
@@ -170,40 +143,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           </form>
         </div>
       </div>
+
       <div class="blue">
         <div class="table_container">
           <table>
-            <caption class="table_class">
-              AQI TABLE
-            </caption>
-            <tr>
-              <th>City</th>
-              <th>AQI</th>
-            </tr>
-            <tr>
-              <td>Dhaka</td>
-              <td>150</td>
-            </tr>
-            <tr>
-              <td>Chittagong</td>
-              <td>120</td>
-            </tr>
-            <tr>
-              <td>Rajshahi</td>
-              <td>90</td>
-            </tr>
-            <tr>
-              <td>Sylhet</td>
-              <td>80</td>
-            </tr>
-            <tr>
-              <td>Khulna</td>
-              <td>110</td>
-            </tr>
-            <tr>
-              <td>Mymensingh</td>
-              <td>75</td>
-            </tr>
+            <caption class="table_class">AQI TABLE</caption>
+            <tr><th>City</th><th>AQI</th></tr>
+            <tr><td>Dhaka</td><td>150</td></tr>
+            <tr><td>Chittagong</td><td>120</td></tr>
+            <tr><td>Rajshahi</td><td>90</td></tr>
+            <tr><td>Sylhet</td><td>80</td></tr>
+            <tr><td>Khulna</td><td>110</td></tr>
+            <tr><td>Mymensingh</td><td>75</td></tr>
           </table>
         </div>
       </div>

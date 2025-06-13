@@ -45,9 +45,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['confirm'])) {
         if ($stmt->num_rows > 0) {
             $errors[] = "Email already registered.";
         } else {
-            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+            #$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
             $insert = $conn->prepare("INSERT INTO user (name, dob, password, email, division, gender) VALUES (?, ?, ?, ?, ?, ?)");
-            $insert->bind_param("ssssss", $name, $dob, $hashedPassword, $email, $division, $gender);
+            $insert->bind_param("ssssss", $name, $dob, $password, $email, $division, $gender);
 
             if ($insert->execute()) {
                 $success = "User registered successfully!";

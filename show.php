@@ -1,4 +1,8 @@
 <?php
+session_start();
+$username = $_SESSION['uname'] ?? 'Guest';
+$bg_color = $_COOKIE['bg_color'] ?? '#ffffff';
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $selectedCities = $_POST['cities'] ?? [];
 
