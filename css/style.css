@@ -20,13 +20,13 @@ body {
 
 .orange {
   width: 325px;
-  height: 600px;
+  height: 500px;
   background-color: orange;
 }
 
 .gray {
   width: 325px;
-  height: 150px;
+  height: 250px;
   background-color: gray;
 }
 
@@ -40,8 +40,10 @@ body {
 .registration {
   border-radius: 5px;
   margin: 10px;
-  height: 20px;
+  height: 50px;
+  width: 11px;
   border: 0px;
+  font-size: 30px;
 }
 .form-group {
   display: flex;
@@ -64,23 +66,32 @@ body {
   height: 35px;
   width: 65px;
   margin: 10px;
+  font-size: 18px;
+  font-weight: bold;
 }
 .table_container {
   display: flex;
   justify-content: center;
+  filter: blur(4px);
 }
 
 .table_class {
   margin: 10px;
 }
+
 table,
 th,
 td {
   border: 2px solid black;
   border-collapse: collapse;
+  filter: blur(4px);
 }
 td,
 th {
   width: 100px;
   height: 38px;
+  filter: blur(4px);
+}
+.blur {
+  filter: blur(5px);
 }

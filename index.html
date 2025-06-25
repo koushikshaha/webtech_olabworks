@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -26,7 +24,7 @@ session_start();
               <p id="errorMessage"></p>
             </div>
             <div>
-              <label for="name">Name</label>
+              <label for="name" style="margin-left: 1.5ch;">Name</label>
             </div>
             <div>
               <input
@@ -39,7 +37,7 @@ session_start();
             </div>
 
             <div>
-              <label for="password">Password</label>
+              <label for="password" style="margin-left: 1.5ch;">Password</label>
             </div>
             <div>
               <input
@@ -52,7 +50,7 @@ session_start();
             </div>
 
             <div>
-              <label for="repassword">Confirm Password</label>
+              <label for="repassword" style="margin-left: 1.5ch;">Confirm Password</label>
             </div>
             <div>
               <input
@@ -64,15 +62,15 @@ session_start();
               />
             </div>
             <div>
-              <label>Gender</label><br />
-              <input type="radio" name="gender" id="male" value="male" />
+              <label style="margin-left: 1.5ch;"></tab>Gender</label><br />
+              <input type="radio" name="gender" id="male" value="male" style="margin-left: 1.5ch;"/>
               <label for="male">Male</label>
-              <input type="radio" name="gender" id="female" value="female" />
+              <input type="radio" name="gender" id="female" value="female" style="margin-left: 1ch;"/>
               <label for="female">Female</label>
             </div>
 
             <div>
-              <label for="email">Email</label>
+              <br><label for="email" style="margin-left: 1.5ch;">Email</label>
             </div>
             <div>
               <input
@@ -85,14 +83,14 @@ session_start();
             </div>
 
             <div>
-              <label for="DOB">Date of Birth</label>
+              <label for="DOB" style="margin-left: 1.5ch;">Date of Birth</label>
             </div>
             <div>
               <input type="date" name="date" class="registration" id="DOB" />
             </div>
 
             <div>
-              <label for="division">Choose your division:</label>
+              <label for="division" style="margin-left: 1.5ch;">Choose your division:</label>
               <select id="division" name="division" class="registration">
                 <option value="dhaka">Dhaka</option>
                 <option value="rajshahi">Rajshahi</option>
@@ -104,7 +102,7 @@ session_start();
             </div>
 
             <div>
-              <label for="color"> Select a color</label>
+              <label for="color" style="margin-left: 1.5ch;"> Select a color</label>
               <input type="color" name="color" id="color">
             </div>
 
@@ -118,7 +116,10 @@ session_start();
         <div class="gray">
           <form  action="login.php" method="post">
             <div class="formgroup">
-              <label for="email">Email</label>
+              <label for="email" style="margin-left: 1.5ch;"> Email</label>
+              
+            </div>
+            <div>
               <input
                 type="text"
                 id="login_email"
@@ -126,9 +127,13 @@ session_start();
                 class="login"
                 placeholder="Enter your email"
               />
+              
             </div>
             <div class="formgroup">
-              <label for="login_password">Password</label>
+              <label for="login_password" style="margin-left: 1.5ch;">Password</label>
+              
+            </div>
+            <div>
               <input
                 type="login_password"
                 id="login_password"
@@ -136,6 +141,7 @@ session_start();
                 class="login"
                 placeholder="Enter your password"
               />
+
             </div>
             <div class="button_container">
               <button type="submit" class="button" name="submit_login">log in</button>
@@ -146,7 +152,7 @@ session_start();
 
       <div class="blue">
         <div class="table_container">
-          <table>
+          <table class="blur">
             <caption class="table_class">AQI TABLE</caption>
             <tr><th>City</th><th>AQI</th></tr>
             <tr><td>Dhaka</td><td>150</td></tr>
