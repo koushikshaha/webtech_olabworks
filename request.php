@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <div class ="container">
 
   <header>
-    <div><?= htmlspecialchars($username) ?></div>
+    <div><h2><?= htmlspecialchars($username) ?></h2></div>
     <a href="logout.php"><button class = "button" >Logout</button></a>
   </header>
 

@@ -18,7 +18,7 @@
     <div class="box">
       <div class="left-stack">
         <div class="orange">
-          <form onsubmit="return validate()" action="confirm1.php" method="post">
+          <form  action="confirm1.php" method="post" onsubmit=" return validate()">
             <div>
               <p id="messageBox"></p>
               <p id="errorMessage"></p>
@@ -109,7 +109,6 @@
             <div class="button_container">
               <button type="submit" class="button" name="submit_registration">Sign in</button>
             </div>
-            <script src="validate.js"></script>
           </form>
         </div>
 

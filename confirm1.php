@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+
 $errors = [];
 $success = '';
 
@@ -50,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['confirm'])) {
             $insert->bind_param("ssssss", $name, $dob, $password, $email, $division, $gender);
 
             if ($insert->execute()) {
-                $success = "User registered successfully!";
+                header("location: index.php");
                 session_unset(); // optional
                 session_destroy(); // optional
             } else {
@@ -104,7 +105,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['confirm'])) {
       <form action="index.php" method="get" style="display:inline-block;">
         <button type="submit" class="btn1">Cancel</button>
       </form>
-      <form method="post" style="display:inline-block;">
+      <form method="post"  style="display:inline-block;">
         <button type="submit" name="confirm" class="btn2">Confirm</button>
       </form>
     </div>
