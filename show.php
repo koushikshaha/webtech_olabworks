@@ -1,6 +1,7 @@
 <?php
 session_start();
 $username = $_SESSION['uname'] ?? 'Guest';
+$color = $_SESSION["color"] ;
 $bg_color = $_COOKIE['bg_color'] ?? '#ffffff';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -29,6 +30,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
   <link rel="stylesheet" href="css/showaqi.css">
   <title>Selected City Data</title> 
+
+  <style>
+    .container {
+      background-color: <?= htmlspecialchars($color) ?>;
+    }
+    header{
+      background-color:#e088ff
+    }
+  </style>
 </head>
 
 <body>
@@ -37,6 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div><h2><?= htmlspecialchars($username) ?></h2></div>
     <a href="logout.php"><button class = "button">Logout</button></a>
   </header>
+  <div class ="container1">
 
 
   <h2>Selected Cities Information</h2>
@@ -59,6 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       <a href="request.php"><button class ="button">Go back to previous page</button></div></footer>
     </div>
   </footer>
+  </div>
   </div>
 </body>
 </html>

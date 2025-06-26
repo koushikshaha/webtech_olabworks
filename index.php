@@ -108,6 +108,7 @@
 
             <div class="button_container">
               <button type="submit" class="button" name="submit_registration">Sign in</button>
+              <script src="validate.js"></script>
             </div>
           </form>
         </div>
@@ -166,3 +167,4 @@
     </div>
   </body>
 </html>
+

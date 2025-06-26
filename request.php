@@ -26,8 +26,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <title>City Selection</title>
   <link rel="stylesheet" href="css/request.css">
   <style>
-    .container {
+    .container1 {
       background-color: <?= htmlspecialchars($color) ?>;
+    }
+    header{
+      background-color:#e088ff
     }
   </style>
 
