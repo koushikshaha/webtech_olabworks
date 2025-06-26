@@ -9,7 +9,7 @@
   </head>
   <body>
     <img
-      src="images/html.png"
+      src="images/html1.png"
       alt="this is a logo"
       height="70px"
       class="img"
@@ -18,7 +18,7 @@
     <div class="box">
       <div class="left-stack">
         <div class="orange">
-          <form  action="confirm1.php" method="post" onsubmit=" return validate()">
+          <form  action="confirm1.php" method="post" onsubmit=" return validate1()">
             <div>
               <p id="messageBox"></p>
               <p id="errorMessage"></p>
@@ -108,7 +108,7 @@
 
             <div class="button_container">
               <button type="submit" class="button" name="submit_registration">Sign in</button>
-              <script src="validate.js"></script>
+              <script src="validate1.js"></script>
             </div>
           </form>
         </div>
