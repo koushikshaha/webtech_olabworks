@@ -103,7 +103,7 @@
 
             <div>
               <label for="color" style="margin-left: 1.5ch;"> Select a color</label>
-              <input type="color" name="color" id="color">
+              <input type="color" name="color" id="color" value="#000000">
             </div>
 
             <div class="button_container">

@@ -1,6 +1,7 @@
 <?php
 session_start();
 $username = $_SESSION['uname'] ?? 'Guest';
+$color = $_SESSION["color"] ;
 $bg_color = $_COOKIE['bg_color'] ?? '#ffffff';
 
 $message = '';
@@ -24,16 +25,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
   <title>City Selection</title>
   <link rel="stylesheet" href="css/request.css">
+  <style>
+    .container {
+      background-color: <?= htmlspecialchars($color) ?>;
+    }
+  </style>
+
 </head>
 <body background-color: <?= htmlspecialchars($bg_color) ?>>
   <div class ="container">
 
   <header>
-    <div><h2><?= htmlspecialchars($username) ?></h2></div>
+    <div>
+      <h2><?= htmlspecialchars($username) ?></h2>
+      
+
+  </div>
     <a href="logout.php"><button class = "button" >Logout</button></a>
   </header>
 
-  <div class="container">
+  <div class="container1">
     <div><?= htmlspecialchars($message) ?></div>
 
   <h2>Select Your Cities</h2>

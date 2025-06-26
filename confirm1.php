@@ -13,6 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_POST['confirm'])) {
     $_SESSION['gender'] = $_POST['gender'] ?? '';
     $_SESSION['dob'] = $_POST['date'] ?? '';
     $_SESSION['division'] = $_POST['division'] ?? '';
+    $_SESSION['color'] = $_POST['color'] ?? '';
     
 }
 
@@ -25,10 +26,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['confirm'])) {
     $gender = $_SESSION['gender'] ?? '';
     $dob = $_SESSION['dob'] ?? '';
     $division = $_SESSION['division'] ?? '';
+    $color = $_SESSION['color'] ?? '#000000';
 
     // Store color in cookie
-    $color = $_POST['color'] ?? '#000000';
-    setcookie('username_color', $color, time() + (86400 * 30), "/"); // Expires in 30 days
+    $ccolor = $_POST['color'] ?? '#000000';
+    setcookie('username_color', $ccolor, time() + (86400 * 30), "/"); // Expires in 30 days
 
     // Validation
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -47,8 +49,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['confirm'])) {
             $errors[] = "Email already registered.";
         } else {
             #$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-            $insert = $conn->prepare("INSERT INTO user (name, dob, password, email, division, gender) VALUES (?, ?, ?, ?, ?, ?)");
-            $insert->bind_param("ssssss", $name, $dob, $password, $email, $division, $gender);
+            $insert = $conn->prepare("INSERT INTO user (name, dob, password, email, division, gender,color) VALUES (?, ?, ?, ?, ?, ?, ?)");
+            $insert->bind_param("sssssss", $name, $dob, $password, $email, $division, $gender, $color);
 
             if ($insert->execute()) {
                 header("location: index.php");
@@ -85,6 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['confirm'])) {
       <p><strong>Password:</strong> <?= str_repeat('*', strlen($_SESSION['password'] ?? '')) ?></p>
       <p><strong>Gender:</strong> <?= htmlspecialchars($_SESSION['gender'] ?? '') ?></p>
       <p><strong>Division:</strong> <?= htmlspecialchars($_SESSION['division'] ?? '') ?></p>
+      <p><strong>Color:</strong> <?= htmlspecialchars($_SESSION['color'] ?? '') ?></p>
     </div>
 
     <?php if (!empty($errors)): ?>

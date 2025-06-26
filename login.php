@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["submit_login"])) {
     }
 
     // Prepare and execute query securely
-    $stmt = $conn->prepare("SELECT id, name, password FROM user WHERE email = ? AND password = ?");
+    $stmt = $conn->prepare("SELECT id, name, password,color FROM user WHERE email = ? AND password = ?");
     if (!$stmt) {
         echo "Database error.";
         exit();
@@ -33,6 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["submit_login"])) {
         // Verify password
         if ($password === $row["password"]) {
           $_SESSION["uname"] = $row["name"];
+          $_SESSION["color"] = $row["color"];
           header("Location: request.php");
           exit();
 }       else {
